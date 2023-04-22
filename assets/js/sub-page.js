@@ -84,3 +84,35 @@ document.querySelector("#who-we-are").addEventListener("click", function(){
 document.querySelector(".we-pop-up .close-btn").addEventListener("click", function(){
   document.querySelector(".blur-body").classList.remove("active");
 });
+
+
+//Hire Us message
+
+function sendEmail(){
+
+
+  let serviceChecked = document.querySelector('input[type="checkbox"]:checked');
+
+  let name = document.getElementById('name').value;
+  let email = document.getElementById('email').value;
+  let serviceType = serviceChecked.value;
+  let body = "Name: " + name + "<br/> Email: " + email + "<br/> Service Type: " + serviceType;
+  let Subject = "New Email on Ueye website from " + name;
+
+  Email.send({
+  SecureToken : "839fa4de-8928-47be-9762-eb34cd124de8",
+  To : 'see@ueye.design',
+  From : 'see@ueye.design',
+  Subject : Subject,
+  Body : body,
+}).then(
+message => swal({
+  title:"Here's a message!",
+  text:"Thanks for hired Us.",
+  icon:"success",
+  className:"message-success-popup",
+})
+//message => alert(message)
+);
+}
+

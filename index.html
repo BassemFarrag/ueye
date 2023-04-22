@@ -11,13 +11,15 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/sub-pages.css">
   <link rel="icon" href="assets/img/title.png" type="image/icon type">
-<!--
+  <link rel="stylesheet" href="sweetalert2.min.css">
+  <!--
   Global Template By BuckyMaler
   Github: https://github.com/BuckyMaler
   
   Edited by Bassem Farrag
   Github: https://github.com/bassemfarrag
 -->
+
 </head>
 <body>
   
@@ -169,14 +171,14 @@
                     </div>
                     <div class="about--options">
                       <a id="show-meet-team-and-vision" href="#0">
-                        <h3>Meet the <br>Team<hr></h3>
+                        <h3>Team</h3>
                       </a>
                       <a id="show-goals-and-vision" href="#0">
-                        <h3>Goals and vision <hr></h3>
+                        <h3>vision</h3>
                         
                       </a>
                       <a id="show-terms-and-vision" href="#0">
-                        <h3>Terms and <br>policies<hr> </h3>
+                        <h3>Terms</h3>
                       </a>
                     </div>
                   </div>
@@ -203,10 +205,10 @@
                   <div class="hire">
                     <h2>You want us to do</h2>
                     <!-- checkout formspree.io for easy form setup -->
-                    <form class="work-request">
+                    <form method="post" onsubmit="sendEmail(); reset(); return false;" class="work-request">
                       <div class="work-request--options">
                         <span class="options-a">
-                          <input id="opt-1" type="checkbox" value="Translate">
+                          <input name="serviceType" id="opt-1" type="checkbox" value="Translate" class="form-translate">
                           <label for="opt-1">
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
@@ -216,7 +218,7 @@
                             </svg>
                             Translation
                           </label>
-                          <input id="opt-2" type="checkbox" value="graphic design">
+                          <input name="serviceType" id="opt-2" type="checkbox" value="graphic design" class="form-graphic-Design">
                           <label for="opt-2">
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
@@ -226,7 +228,7 @@
                             </svg>
                             Graphic Design
                           </label>
-                          <input id="opt-3" type="checkbox" value="video editingn">
+                          <input name="serviceType" id="opt-3" type="checkbox" value="video editing" class="form-video-Editing">
                           <label for="opt-3">
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
@@ -238,7 +240,7 @@
                           </label>
                         </span>
                         <span class="options-b">
-                          <input id="opt-4" type="checkbox" value="ux-ui design">
+                          <input name="serviceType" id="opt-4" type="checkbox" value="ux-ui design" class="form-ux-ui-design">
                           <label for="opt-4">
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
@@ -248,7 +250,7 @@
                             </svg>
                             UX/UI Design
                           </label>
-                          <input id="opt-5" type="checkbox" value="transcription">
+                          <input name="serviceType" id="opt-5" type="checkbox" value="transcription" class="form-transcription">
                           <label for="opt-5">
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
@@ -258,7 +260,7 @@
                             </svg>
                             Transcription
                           </label>
-                          <input id="opt-6" type="checkbox" value="marketing">
+                          <input name="serviceType" id="opt-6" type="checkbox" value="marketing" class="form-marketing">
                           <label for="opt-6">
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
@@ -280,7 +282,7 @@
                           <label for="email">Email</label>
                         </div>
                       </div>
-                      <input type="submit" value="Send Request">
+                      <input id="sweetalert" type="submit" value="Send Request">
                     </form>
                   </div>
                 </li>
@@ -511,5 +513,13 @@
   }
 
 </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="sweetalert2.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  
+
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+
 </body>
 </html>
