@@ -66,3 +66,14 @@ $('#opt-1,#opt-2,#opt-3,#opt-4,#opt-5,#opt-6').change(function() {
   
   });
   
+
+
+//-----------
+
+$('#opt-1,#opt-2,#opt-3,#opt-4,#opt-5,#opt-6').click(function() {
+  if ($(this).is(':checked')) {
+    $('#sweetalert').removeAttr('disabled');
+  } else {
+    $('#sweetalert').attr('disabled', 'disabled');
+  }
+});
